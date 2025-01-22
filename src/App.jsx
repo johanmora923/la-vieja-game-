@@ -90,7 +90,7 @@ function App() {
   return (
     <ErrorBoundary>
       <main className='board'>
-        <h1>tic tac toe</h1>
+        <h1>La Vieja Game</h1>
         <button onClick={resetGame}>empezar de nuevo</button>
         <section className='game'>
           {board.map((value, index) => (
