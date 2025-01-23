@@ -1,4 +1,3 @@
-// filepath: /home/johanmora923/la vieja/grandmother/src/App.jsx
 import './App.css';
 import { useState, useEffect, useCallback } from 'react';
 import confetti from 'canvas-confetti';
@@ -62,7 +61,7 @@ function App() {
     } else if (checkEndGame(newBoard)) {
       setWinner(false);
     }
-  }, [board, turn, winner, checkWinner]);
+  }, [board, turn, winner, checkWinner,record]);
 
   useEffect(() => {
     if (turn === TURNS.o && !winner) {
