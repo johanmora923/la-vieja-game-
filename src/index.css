@@ -3,11 +3,9 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #dddd;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -36,14 +34,14 @@ body {
 }
 
 .board h1 {
-  color: #eee;
+  color: #242424;
   margin-bottom: 16px;
 }
 
 .board button {
   padding: 8px 12px;
   margin: 25px;
-  background: transparent;
+  background: #242424;
   border: 2px solid #eee;
   color: #eee;
   width: 100px;
@@ -54,10 +52,28 @@ body {
 }
 
 .board button:hover {
-  background: #eee;
+  background: #09f;
   color: #222;
 }
 
+.wrapper{
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.sidebar{
+  width: 20%;
+  min-width: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+}
 .board .game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -122,10 +138,38 @@ body {
 .square {
   width: 100px;
   height: 100px;
-  border: 2px solid #eee;
+  border: 2px solid #242424;
   border-radius: 5px;
   display: grid;
   place-items: center;
   cursor: pointer;
   font-size: 48px;
+  background-color: #333;
+  font-size: 4rem;
+}
+
+.square:hover {
+  background-color: #242424;
+}
+
+/*queerys section*-----------------------------------------------*/
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: auto;
+    display: flex ;
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
 }

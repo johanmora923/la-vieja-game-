@@ -91,45 +91,48 @@ function App() {
       <main className='board'>
         <h1>La Vieja Game</h1>
         <button onClick={resetGame}>empezar de nuevo</button>
-        <section className='game'>
-          {board.map((value, index) => (
-            <Square 
-              key={index}
-              index={index}
-              updateBoard={updateBoard}
-            >
-              {board[index]}
-            </Square>
-          ))}
-        </section>
-
-        <section className='turn'>
-          <Square isSelected={turn === TURNS.x}>
-            {TURNS.x}
-          </Square>
-          <Square isSelected={turn === TURNS.o}>
-            {TURNS.o}
-          </Square>
-        </section>
-        <section className='record'>
-          <h2>record</h2>
-          <p>{record}</p>
-        </section>
-        {winner !== null && (
-          <section className='winner'>
-            <div className='text'>
-              <h2>
-                {winner === false ? 'empate' : 'gano:'}
-              </h2>
-              <header className='win'>
-                {winner && <Square>{winner}</Square>}
-              </header>
-              <footer>
-                <button onClick={resetGame}>empezar de nuevo</button>
-              </footer>
-            </div>
+        <div className='wrapper'>
+          <section className='game'>
+            {board.map((value, index) => (
+              <Square 
+                key={index}
+                index={index}
+                updateBoard={updateBoard}
+              >
+                {board[index]}
+              </Square>
+            ))}
           </section>
-        )}
+          <div className='sidebar'>
+            <section className='turn'>
+              <Square isSelected={turn === TURNS.x}>
+                {TURNS.x}
+              </Square>
+              <Square isSelected={turn === TURNS.o}>
+                {TURNS.o}
+              </Square>
+            </section>
+            <section className='record'>
+              <h2>Record</h2>
+              <p>{record}</p>
+            </section>
+          </div>
+          {winner !== null && (
+            <section className='winner'>
+              <div className='text'>
+                <h2>
+                  {winner === false ? 'empate' : 'gano:'}
+                </h2>
+                <header className='win'>
+                  {winner && <Square>{winner}</Square>}
+                </header>
+                <footer>
+                  <button onClick={resetGame}>empezar de nuevo</button>
+                </footer>
+              </div>
+            </section>
+          )}
+        </div>
       </main>
     </ErrorBoundary>
   );
